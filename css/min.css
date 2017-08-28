@@ -1,0 +1,152 @@
+body{margin:  0;
+padding: 0;
+}
+.layout{
+	margin:0 auto;
+	width:1200px;
+}
+.layout::before
+.layout::after{
+	content:"";
+	display:table;
+}
+ .s-sub a:hover{
+	color: #ca1514;
+}
+.shortcut{
+	background: #fff;
+	font-family: "arial, helvetica, sans-serif";
+	height:30px;
+	line-height: 30px;
+	min-width: 1200px;	
+}
+.s-sub{float:left;}
+.s-sub a{
+	text-decoration: none;
+	color:#999;
+}
+.s-sub li:hover span{	
+	transform: rotate(180deg);
+}
+.s-sub>li{
+	display: inline-block;
+	list-style: none;
+	font-size:11px;
+	text-decoration:none;
+	color:#999;
+}
+.s-sub> li + li:before {
+padding: 0 5px;
+color: #ccc;
+content: "|\00a0";
+}
+.drop img{
+	padding: 10px;
+}
+.drop li{
+	text-align: center;
+}
+.s-sub .drop  a:hover{
+	color:#ca151d;
+	background-color:#ffffff;
+}
+.s-main{
+	float:right;
+	padding-right: 40px;
+}
+.s-main a{
+	text-decoration: none;
+	color:#999;
+}
+.s-main  li:hover span{	
+	transform: rotate(180deg);
+}
+.s-main >li{
+	display: inline-block;
+	list-style: none;
+	font-size:11px;
+	text-decoration:none;
+	color:#999;
+}
+.s-main> li + li:before {
+padding: 0 5px;
+color: #ccc;
+content: "|\00a0";
+}
+.s-main a:hover{
+	color: #ca1514;
+}
+.second{
+	clear:both;
+	padding-left:40px;
+}
+.logo{
+	float: left;
+}
+.naver{
+	float: left;
+	height:40px;
+	margin-top:5px;
+	max-width:560px;
+	overflow: hidden;
+}
+.clearfix::before
+.clearfix::after{
+	content:"";
+	display:table;
+}
+.clearfix>li{
+	display:inline-block;
+	list-style:none;
+	padding:8px;
+	
+	
+}
+.naver a{
+	text-decoration:none;
+	color:#3a3a3a;
+	font-size:16px;
+	line-height: 40px;
+}
+naver a:hover{
+	color: #ca1514;
+}
+.right{
+	float: right;
+	margin-top:10px;
+	width:295px;
+	padding-right:20px ;
+}
+.right input{
+	background-image:url(../img/search.png) ;
+	background-repeat: no-repeat;
+	background-position: right;
+	width:260px;
+	border:none;
+	border-bottom: 1px solid #3a3a3a;
+	
+}
+.hot-board{
+	clear:both;
+	padding-top: 30px;
+}
+.hot-board.carousel-inner.item img{
+	height:400px;
+	
+}
+.home-promo-list li{
+	display:inline-block;
+	clear:both;
+	margin:-6px;
+	
+}
+.home-promo-list img{
+	width:282px;
+} 
+.third{
+	width :1200px;
+}
+.third h2{
+	margin-left: 40px;
+	font-size:23px;
+}
