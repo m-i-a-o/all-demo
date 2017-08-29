@@ -86,9 +86,9 @@ content: "|\00a0";
 .naver{
 	float: left;
 	height:40px;
-	margin-top:5px;
+	margin-top:-15px;
 	max-width:560px;
-	overflow: hidden;
+	
 }
 .clearfix::before
 .clearfix::after{
@@ -108,14 +108,15 @@ content: "|\00a0";
 	font-size:16px;
 	line-height: 40px;
 }
-naver a:hover{
+.naver a:hover{
 	color: #ca1514;
+	border-bottom: 1px solid #ca1514;
 }
 .right{
 	float: right;
 	margin-top:10px;
 	width:295px;
-	padding-right:20px ;
+	padding-right:10px;
 }
 .right input{
 	background-image:url(../img/search.png) ;
@@ -126,27 +127,28 @@ naver a:hover{
 	border-bottom: 1px solid #3a3a3a;
 	
 }
-.hot-board{
-	clear:both;
-	padding-top: 30px;
-}
-.hot-board.carousel-inner.item img{
-	height:400px;
+.searchBar-key{
+	text-align:right;
+	white-space: nowrap;
+	bottom: 8px;
+	max-width: 280px;
+	overflow: hidden;
+	margin-top: -35px;
+	padding-right:55px ;
+	right:30px;
 	
-}
-.home-promo-list li{
-	display:inline-block;
-	clear:both;
-	margin:-6px;
 	
+	z-index: 2;
 }
-.home-promo-list img{
-	width:282px;
-} 
-.third{
-	width :1200px;
+.searchBar-key a{
+	background:#f5f5f5  none repeat scroll 0 0 ;
+	color: #a4a4a4;
+	font-size:12px;
+	margin-right: 10px;
+	padding:4px 4px 4px;
+	cursor:pointer;
+	text-decoration:none;
 }
-.third h2{
-	margin-left: 40px;
-	font-size:23px;
+.searchBar-key a:hover{
+	color: #ca1514;
 }
