@@ -2,14 +2,110 @@
 <html>
 	<head>
 		<meta charset="utf-8" />
-		
-		
 		<title>华为商城官网-荣耀9、华为P10、华为Mate9、荣耀V9、荣耀8青春版、荣耀6X、华为nova2、
 			华为手环、华为平板、华为笔记本官方网站</title>
 		<meta name="keywords" content="华为商城,华为官网,华为手机官网,华为平板电脑,华为笔记本">
-      
         <link rel="stylesheet" href="css/min.css">
-      
+       <script type="text/javascript">
+       window.onload=function(){
+    window.onload=function(){
+    var prev=document.getElementById("prev");
+    var next=document.getElementById("next");
+    var imgs=document.getElementById("contain_imgs");
+    var span=document.getElementsByTagName("span");
+    var count=0;
+    var timer;
+    var interval=3000;
+    var animated = false;
+    function move(offset){
+        animated = true;
+        var time = 1000;
+        var inteval = 10;
+        var speed = offset/(time/inteval);
+        var left=parseInt(imgs.style.left)+offset;
+        var amimate=function(){
+
+        if ( (speed > 0 && parseInt(imgs.style.left) < left) || (speed < 0 && parseInt(imgs.style.left) > left)) {
+                    imgs.style.left = parseInt(imgs.style.left) + speed + 'px';
+                    setTimeout(amimate, inteval);
+                }else{
+                    imgs.style.left = left + 'px';
+                    if(parseInt(left)>-1024){
+                    imgs.style.left=-3072+"px";
+
+                    }
+                    if(parseInt(left)<-4096){
+                    imgs.style.left=-1024   +"px";
+
+                    }
+                     animated = false;
+                }
+        }
+
+            amimate();
+    }
+    function showspan(){
+        for(i=0;i<span.length;i++){
+            if(span[i].className=='on')
+                span[i].className='';
+        }
+        span[count].className='on';
+    }
+    prev.onclick=function(){
+        if (animated) {
+              return;
+            }
+        move(1024);
+        if(count==0){
+            count=3;
+        }
+        else
+            count--;
+        showspan();
+    }
+    next.onclick=function(){
+        if (animated) {
+              return;
+            }
+        move(-1024);
+        if(count==3){
+            count=0;
+        }
+        else
+            count++;
+        showspan();
+    }
+
+    for (var i = 0; i < span.length; i++) {
+        span[i].id=i;
+        span[i].onclick=function(){
+            if(this.className=='on'){
+            return;
+            }
+            index=this.id;
+            var offset=-1024*(index-count);
+            move(offset);
+            count=index;
+            showspan();
+        }   
+
+    }
+    function play() {
+                timer = setInterval(function () {
+                    next.onclick();
+                }, interval);
+            }
+    function stop() {
+                clearInterval(timer);
+            }
+
+     contain.onmouseover = stop;
+     contain.onmouseout = play;
+        play();
+}
+
+
+       </script>
 	</head>
 	<body>
 		<!--头部导航栏-->
@@ -76,75 +172,33 @@
 					<div class="right">
 						<input type="text" name="search" class="s-box">
 						<div class="searchBar-key" >
-						<a href="#" target="_blank">HUAWEI nova 2</a>
-						<a href="#" target="_blank">荣耀8青春版</a>
+						<a href="#" target="_blank">HUAWEI P10</a>
+						<a href="#" target="_blank">HUAWEI Mate 9</a>
+						<a href="#" target="_blank">HUAWEI nova</a>
 						</div>
 					</div>
 				</div>
-		 </div>
-			
-			
-		</div>	
-		<div class="hot-board">
-			<div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
-			<ol class="carousel-indicators">
-				<li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
-				<li data-target="#carousel-example-generic" data-slide-to="1" ></li>
-				<li data-target="#carousel-example-generic" data-slide-to="2" ></li>
-				<li data-target="#carousel-example-generic" data-slide-to="3" ></li>
-				<li data-target="#carousel-example-generic" data-slide-to="4" ></li>
-			</ol>
-			<div class="carousel-inner" role="listbox">
-				<div class="item active">
-					<img src="https://res.vmallres.com/pimages//sale/2017-08/20170825090803706.jpg" alt="huawei">
-					
-				</div>
-				<div class="item ">
-					<img src="https://res.vmallres.com/pimages//sale/2017-08/20170824193003443.jpg" alt="huawei">
-				</div>
-				<div class="item ">
-					<img src="https://res.vmallres.com/pimages//sale/2017-08/20170825200214843.jpg" alt="huawei">
-					
-				</div>
-				<div class="item ">
-					<img src="https://res.vmallres.com/pimages//sale/2017-08/20170824231337407.jpg"  alt="huawei">
-					
-				</div>
-				<div class="item ">
-					<img src="https://res.vmallres.com/pimages//sale/2017-08/20170825200346991.jpg" alt="huawei">
-					
-				</div>
-			</div>
-			
-           
-		</div>
-		</div>
-		<div class="middle">
-			<ul class="home-promo-list clearfix">
-				<li>
-					<a href="##"><img src="https://res.vmallres.com/pimages//sale/2017-08/20170801104253459.jpg" alt="huawei"></a>
-				</li>
-				<li>
-					<a href="##"><img src="https://res.vmallres.com/pimages//sale/2017-08/20170821110550284.png" alt="huawei"></a>
-				</li>
-				<li>
-					<a href="##"><img src="https://res.vmallres.com/pimages//sale/2017-08/20170825200616531.png" alt="huawei"></a>
-				</li>
-				<li>
-					<a href="##"><img src="https://res.vmallres.com/pimages//sale/2017-08/20170821094504277.png" alt="huawei"></a>
-				</li>
-			</ul>
-		</div>
-		<div class="third">
-				<h2>
-				    热销单品
-				</h2>
-				
-				
-			</div>
-		</div>
-	</body>
-		</div>
-<script src="http://libs.baidu.com/jquery/1.9.0/jquery.js"></script>
-<script src="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+           </div>
+        </div> 	
+	     <!--轮播图-->
+	    <div class="wrap" id='wrap'>
+ <ul id="pic">
+ <li><img src="https://res.vmallres.com/pimages//sale/2017-08/2017082509580652.jpg"/></li>
+ <li><img src="https://res.vmallres.com/pimages//sale/2017-09/20170901003323522.jpg"/></li>
+ <li><img src="https://res.vmallres.com/pimages//sale/2017-09/20170901003356217.jpg"/></li>
+ <li><img src="https://res.vmallres.com/pimages//sale/2017-09/20170901003414173.jpg"/></li>
+  <li><img src="https://res.vmallres.com/pimages//sale/2017-09/20170901003420802.jpg"/></li>
+ </ul>
+ <ol id="list">
+ <li class="on"></li>
+ <li></li>
+ <li></li>
+ <li></li>
+ <li></li>
+ </ol>
+ </div>
+<script src="js/main.js">  </script>    
+	    
+</body>	
+
 </html>

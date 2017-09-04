@@ -16,8 +16,8 @@ padding: 0;
 .shortcut{
 	background: #fff;
 	font-family: "arial, helvetica, sans-serif";
-	height:30px;
-	line-height: 30px;
+	margin:0px;
+	padding:0px;
 	min-width: 1200px;	
 }
 .s-sub{float:left;}
@@ -86,7 +86,7 @@ content: "|\00a0";
 .naver{
 	float: left;
 	height:40px;
-	margin-top:-15px;
+	margin-top:8px;
 	max-width:560px;
 	
 }
@@ -107,6 +107,7 @@ content: "|\00a0";
 	color:#3a3a3a;
 	font-size:16px;
 	line-height: 40px;
+
 }
 .naver a:hover{
 	color: #ca1514;
@@ -114,7 +115,7 @@ content: "|\00a0";
 }
 .right{
 	float: right;
-	margin-top:10px;
+	margin-top:15px;
 	width:295px;
 	padding-right:10px;
 }
@@ -122,7 +123,7 @@ content: "|\00a0";
 	background-image:url(../img/search.png) ;
 	background-repeat: no-repeat;
 	background-position: right;
-	width:260px;
+	width:285px;
 	border:none;
 	border-bottom: 1px solid #3a3a3a;
 	
@@ -131,24 +132,57 @@ content: "|\00a0";
 	text-align:right;
 	white-space: nowrap;
 	bottom: 8px;
-	max-width: 280px;
+	max-width: 300px;
 	overflow: hidden;
-	margin-top: -35px;
-	padding-right:55px ;
+	margin-top: -27px;
+	padding-right:50px ;
 	right:30px;
-	
-	
 	z-index: 2;
 }
 .searchBar-key a{
 	background:#f5f5f5  none repeat scroll 0 0 ;
 	color: #a4a4a4;
-	font-size:12px;
-	margin-right: 10px;
-	padding:4px 4px 4px;
+	font-size:11px;
 	cursor:pointer;
 	text-decoration:none;
 }
 .searchBar-key a:hover{
 	color: #ca1514;
 }
+*{margin:0;
+ padding:0;
+ 
+ }
+ .wrap{
+ height:450px;
+ width: 1300px;
+ overflow: hidden;
+ position: relative;
+ list-style:none;
+ 
+ }
+ .wrap ul li{
+ height:450px;
+ width: 1300px;
+ }
+ .wrap ul li img{
+ margin-left:-260px;	
+ }
+ .wrap ol{position:absolute;
+         left:580px;
+ bottom:10px;}
+ .wrap ol li{
+ height:10px; 
+ width: 10px;
+ background:transparent;
+ border:solid 1px #fff;
+ margin:5px;
+ list-style: none;
+ color:#000;
+ float: left;
+ border-radius: 50%;
+ cursor:pointer;
+ }
+ .wrap ol .on{
+ background:#ffffff ;
+ }

@@ -1,0 +1,202 @@
+<!DOCTYPE html> 
+<html> 
+ <head> 
+ <meta charset="utf-8" /> 
+ <title>滚动图</title> 
+ <style >
+ 	#contain_imgs{
+    margin: 0 ;
+    padding: 0px;
+}
+#contain{
+   margin-left:-10px ;
+    width: 1349px;
+    height: 450px;
+    position: relative;//核心代码，因为我们需要绝对定位，先把父元素设为相对定位
+    overflow: hidden;//其他的隐藏起来
+}
+#contain_imgs{
+    position: absolute;//绝对定位，这样我们就可以定位left值，做到改变left的值可以切换图片
+    top: 0px;
+    width: 9443px;
+    height: 450px;
+    list-style: none;
+    z-index: 1;
+}
+#contain_imgs li{
+    width: 1349px;
+    height: 450px;
+    float: left;
+}
+#prev { 
+    left: 20px;
+}
+#next {
+    right: 20px;
+}
+.arrow { 
+    cursor: pointer;
+    display: none;
+    line-height: 100px; 
+    text-align: center; 
+    font-size: 100px; 
+    font-weight: bold; 
+    width: 100px; 
+    height: 100px;  
+    position: absolute; 
+    z-index: 2; //避免遮盖
+    top: 220px; 
+    background-color: RGBA(0,0,0,.3); 
+    color: #fff;
+    text-decoration: none;
+}
+.arrow:hover { 
+    background: transparent;
+}
+#contain:hover .arrow { 
+   background: none;
+}
+#link{position: absolute;
+    left:430px;
+    bottom: 15px;
+    z-index: 2;
+
+}
+
+#link span{
+    margin: 0 10px;
+    cursor: pointer; 
+    float: left;
+    border: 1px white solid; 
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;//做成圆形按钮
+    background-color: black;
+}
+#link .on{
+    background-color: #ffffff;//当我们切换按钮时用到的
+}
+ </style>
+ <script>
+ 	window.onload=function(){
+    var prev=document.getElementById("prev");
+    var next=document.getElementById("next");
+    var imgs=document.getElementById("contain_imgs");
+    var span=document.getElementsByTagName("span");
+    var count=0;
+    var timer;
+    var interval=3000;
+    var animated = false;
+    function move(offset){
+        animated = true;
+        var time = 1000;
+        var inteval = 10;
+        var speed = offset/(time/inteval);
+        var left=parseInt(imgs.style.left)+offset;
+        var amimate=function(){
+
+        if ( (speed > 0 && parseInt(imgs.style.left) < left) || (speed < 0 && parseInt(imgs.style.left) > left)) {
+                    imgs.style.left = parseInt(imgs.style.left) + speed + 'px';
+                    setTimeout(amimate, inteval);
+                }else{
+                    imgs.style.left = left + 'px';
+                    if(parseInt(left)>-1349){
+                    imgs.style.left=-5396+"px";
+
+                    }
+                    if(parseInt(left)<-6745){
+                    imgs.style.left=-1349   +"px";
+
+                    }
+                     animated = false;
+                }
+        }
+
+            amimate();
+    }
+    function showspan(){
+        for(i=0;i<span.length;i++){
+            if(span[i].className=='on')
+                span[i].className='';
+        }
+        span[count].className='on';
+    }
+    prev.onclick=function(){
+        if (animated) {
+              return;
+            }
+        move(1349);
+        if(count==0){
+            count=4;
+        }
+        else
+            count--;
+        showspan();
+    }
+    next.onclick=function(){
+        if (animated) {
+              return;
+            }
+        move(-1349);
+        if(count==4){
+            count=0;
+        }
+        else
+            count++;
+        showspan();
+    }
+
+    for (var i = 0; i < span.length; i++) {
+        span[i].id=i;
+        span[i].onclick=function(){
+            if(this.className=='on'){
+            return;
+            }
+            index=this.id;
+//          
+          
+            
+            count=index;
+            showspan();
+        }   
+
+    }
+    function play() {
+                timer = setInterval(function () {
+                    next.onclick();
+                }, interval);
+            }
+    function stop() {
+                clearInterval(timer);
+            }
+
+     contain.onmouseover = stop;
+     contain.onmouseout = play;
+        play();
+}
+ </script>
+ 	
+ </head> 
+ <body> 
+ <div id="contain">
+        <ul id="contain_imgs" style="left:-1349px;">
+           <li><img src="https://res.vmallres.com/pimages//sale/2017-09/20170901003420802.jpg"/></li>
+                <li><img src="https://res.vmallres.com/pimages//sale/2017-08/2017082509580652.jpg"/></li>
+                <li><img src="https://res.vmallres.com/pimages//sale/2017-09/20170901003323522.jpg"/></li>
+                <li><img src="https://res.vmallres.com/pimages//sale/2017-09/20170901003356217.jpg"/></li>
+                <li><img src="https://res.vmallres.com/pimages//sale/2017-09/20170901003414173.jpg"/></li>
+                <li><img src="https://res.vmallres.com/pimages//sale/2017-09/20170901003420802.jpg"/></li>
+                <li><img src="https://res.vmallres.com/pimages//sale/2017-08/2017082509580652.jpg"/></li>
+        </ul>
+        <a href="javascript:;" id="prev" class="arrow"></a>//左箭头
+        <a href="javascript:;" id="next" class="arrow"></a>//右箭头
+    <div id="link">
+        <span class="on"></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+    </div>  
+</div>
+ </body> 
+</html>
