@@ -3,106 +3,76 @@
 <head>
  <meta charset="UTF-8">
  <title>Document</title>
+ </head>
  <style>
- *{margin:0;
- padding:0;
- 
- }
- .wrap{height:450px;
- width:1349px;
- overflow: hidden;
- position: relative;
- list-style:none;
- 
- }
- .wrap ul li{	
- padding-left:200px;	
- 
- }
- 
- .wrap ol{position:absolute;
-         left:580px;
- bottom:10px;}
- .wrap ol li{
- height:10px; 
- width: 10px;
- background:transparent;
- border:solid 1px #fff;
- margin:5px;
- list-style: none;
- color:#000;
- float: left;
- border-radius: 50%;
- cursor:pointer;
- }
- .wrap ol .on{
- background:#ffffff ;
- }
-
+ 	.btn {
+  display: inline-block;
+  background: transparent;
+  text-transform: uppercase;
+  font-weight: normal;
+  font-style: normal;
+  font-size: 0.625rem;
+  letter-spacing: 0.3em;
+  color: rgba(223,190,106,0.7);
+  border-radius: 0;
+  padding: 18px 80px 20px;
+  -webkit-transition: all 0.7s ease-out;
+  transition: all 0.7s ease-out;
+  background: -webkit-linear-gradient(180deg, rgba(223,190,106,0.8), rgba(146,111,52,0.8), rgba(34,34,34,0), rgba(34,34,34,0));
+  background: linear-gradient(270deg, rgba(223,190,106,0.8), rgba(146,111,52,0.8), rgba(34,34,34,0), rgba(34,34,34,0));
+  background-position: 1% 50%;
+  background-size: 300% 300%;
+  text-decoration: none;
+  margin: 0.625rem;
+  border: none;
+  border: 1px solid rgba(223,190,106,0.3);
+}
+.btn:hover {
+  color: #fff;
+  border: 1px solid rgba(223,190,106,0);
+  color: $white;
+  background-position: 99% 50%;
+}
+body {
+  background: #231f20;
+  color: #fff;
+  font-family: "Helvetica Neue", Helvetica, Arials, sans;
+}
+article {
+  height: 100vh;
+}
+div.center {
+  text-align: center;
+  *zoom: 1;
+  width: auto;
+  max-width: 800px;
+  float: none;
+  display: block;
+  margin-right: auto;
+  margin-left: auto;
+  padding-left: 0;
+  padding-right: 0;
+  position: relative;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+  transform: translateY(-50%);
+}
+div.center:before,
+div.center:after {
+  content: '';
+  display: table;
+}
+div.center:after {
+  clear: both;
+}
  </style>
- <script type="text/javascript">
- window.onload=function(){
- var wrap=document.getElementById('wrap'),
- pic=document.getElementById('pic').getElementsByTagName("li"),
- list=document.getElementById('list').getElementsByTagName('li'),
- index=0,
- timer=null;
-
- // 定义并调用自动播放函数
-   timer = setInterval(autoPlay, 5000);
-
- // 鼠标划过整个容器时停止自动播放
- wrap.onmouseover = function () {
- clearInterval(timer);
- }
-
- // 鼠标离开整个容器时继续播放至下一张
- wrap.onmouseout = function () {
- timer = setInterval(autoPlay, 2000);
- }
- // 遍历所有数字导航实现划过切换至对应的图片
- for (let i = 0; i < list.length; i++) {
- list[i].onmouseover = function () {
- clearInterval(timer);
-   index = i;
-   changePic(index);
- };
- };
-
- function autoPlay () {
- if (++index >= pic.length) index = 0;
- changePic(index);
- }
-
- // 定义图片切换函数
- function changePic (curIndex) {
- for (var i = 0; i < pic.length; ++i) {
- pic[i].style.display = "none";
- list[i].className = "";
- }
- pic[curIndex].style.display = "block";
- list[curIndex].className = "on";
- }
-
- };
- </script>
+ <body>
+ <article>
+  <div class="center"><a href="#" class="btn">individuals</a><a href="#" class="btn">brokers    </a></div>
+</article>
+ 
 </head>
 <body>
- <div class="wrap" id='wrap'>
- <ul id="pic">
- <li><img src="https://res.vmallres.com/pimages//sale/2017-08/2017082509580652.jpg"/></li>
- <li><img src="https://res.vmallres.com/pimages//sale/2017-09/20170901003323522.jpg"/></li>
- <li><img src="https://res.vmallres.com/pimages//sale/2017-09/20170901003356217.jpg"/></li>
-  <li><img src="https://res.vmallres.com/pimages//sale/2017-09/20170901003414173.jpg"/></li>
-  <li><img src="https://res.vmallres.com/pimages//sale/2017-09/20170901003420802.jpg"/></li>
- </ul>
- <ol id="list">
- <li class="on"></li>
- <li></li>
- <li></li>
- <li></li>
- <li></li>
- </ol>
- </div>
+
 </body>
 </html>

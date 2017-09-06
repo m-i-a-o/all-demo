@@ -6,106 +6,7 @@
 			华为手环、华为平板、华为笔记本官方网站</title>
 		<meta name="keywords" content="华为商城,华为官网,华为手机官网,华为平板电脑,华为笔记本">
         <link rel="stylesheet" href="css/min.css">
-       <script type="text/javascript">
-       window.onload=function(){
-    window.onload=function(){
-    var prev=document.getElementById("prev");
-    var next=document.getElementById("next");
-    var imgs=document.getElementById("contain_imgs");
-    var span=document.getElementsByTagName("span");
-    var count=0;
-    var timer;
-    var interval=3000;
-    var animated = false;
-    function move(offset){
-        animated = true;
-        var time = 1000;
-        var inteval = 10;
-        var speed = offset/(time/inteval);
-        var left=parseInt(imgs.style.left)+offset;
-        var amimate=function(){
-
-        if ( (speed > 0 && parseInt(imgs.style.left) < left) || (speed < 0 && parseInt(imgs.style.left) > left)) {
-                    imgs.style.left = parseInt(imgs.style.left) + speed + 'px';
-                    setTimeout(amimate, inteval);
-                }else{
-                    imgs.style.left = left + 'px';
-                    if(parseInt(left)>-1024){
-                    imgs.style.left=-3072+"px";
-
-                    }
-                    if(parseInt(left)<-4096){
-                    imgs.style.left=-1024   +"px";
-
-                    }
-                     animated = false;
-                }
-        }
-
-            amimate();
-    }
-    function showspan(){
-        for(i=0;i<span.length;i++){
-            if(span[i].className=='on')
-                span[i].className='';
-        }
-        span[count].className='on';
-    }
-    prev.onclick=function(){
-        if (animated) {
-              return;
-            }
-        move(1024);
-        if(count==0){
-            count=3;
-        }
-        else
-            count--;
-        showspan();
-    }
-    next.onclick=function(){
-        if (animated) {
-              return;
-            }
-        move(-1024);
-        if(count==3){
-            count=0;
-        }
-        else
-            count++;
-        showspan();
-    }
-
-    for (var i = 0; i < span.length; i++) {
-        span[i].id=i;
-        span[i].onclick=function(){
-            if(this.className=='on'){
-            return;
-            }
-            index=this.id;
-            var offset=-1024*(index-count);
-            move(offset);
-            count=index;
-            showspan();
-        }   
-
-    }
-    function play() {
-                timer = setInterval(function () {
-                    next.onclick();
-                }, interval);
-            }
-    function stop() {
-                clearInterval(timer);
-            }
-
-     contain.onmouseover = stop;
-     contain.onmouseout = play;
-        play();
-}
-
-
-       </script>
+       <
 	</head>
 	<body>
 		<!--头部导航栏-->
@@ -197,8 +98,83 @@
  <li></li>
  </ol>
  </div>
+ <div class="hr-60"></div>
+ <div class="layout">
+ 	<div class="home-channel-floor huawei-channel-floor">
+ 		<div class="h">
+ 			<h4 class="channel-tittle">华为精品</h4>
+ 		</div>
+ 		
+      <div class="goods-list"  id="order_nav">
+
+	     <ul class="grid-list list clearfix" >
+		       <li class="grid-items ">
+			       <a class="thumb" 1href="##" target="_blank">
+				       <img src="https://res0.vmallres.com/pimages//frontLocation/content/1983791/1495797123862.jpg" >
+			      </a>
+		        </li>
+		      <li class="grid-items">
+			    <a class="thumb" 1href="##" target="_blank">
+			    	     <img src="https://res0.vmallres.com/pimages//frontLocation/content/1916635/1503284938301.jpg">
+			    </a>
+		     </li>
+		     <li class="grid-items">
+			     <a class="thumb" 1href="##" target="_blank">
+				     <img src="https://res0.vmallres.com/pimages//frontLocation/content/1970797/1496892886942.jpg">
+			      </a>
+		     </li>
+		      <li class="grid-items">
+			      <a class="thumb" 1href="##" target="_blank">
+				     <img src="https://res0.vmallres.com/pimages//frontLocation/content/1916639/1502154777392.jpg">
+			     </a>
+		     </li>
+	      </ul>
+	      <ul class=" grid-list-second ">
+	      	<li class="grid-items-second">
+	      		<a href="##" target="_blank">
+	      			<div class="grid-info" >
+	      				<h3 class="grid-title">华为平板M3 青春版 8英寸</h3>
+                        <p class="grid-desc">EMUI5.1流畅体验  </p>
+                        <p class="grid-price">¥1799</p>
+	      			</div>
+	      			<p class="grid-img">
+	      				<img alt="华为平板M3 青春版 8英寸" src="https://res0.vmallres.com/pimages//frontLocation/content/1916645/1496890831024.jpg">
+	      			</p>
+	      		</a>
+	      	</li>
+	      	<li class="grid-items-second">
+	      		<a href="##" target="_blank">
+	      			<div class="grid-info" >
+	      				<h3 class="grid-title">华为运动手环</h3>
+                        <p class="grid-desc">独立GPS </p>
+                        <p class="grid-price">¥388</p>
+	      			</div>
+	      			<p class="grid-img">
+	      				<img alt="华为运动手环" src="https://res0.vmallres.com/pimages//frontLocation/content/1916643/1499997040742.jpg">
+	      			</p>
+	      		</a>
+	      	</li>
+	      	<li class="grid-items-second">
+	      		<a href="##" target="_blank">
+	      			<div class="grid-info" >
+	      				<h3 class="grid-title">华为全景相机</h3>
+                        <p class="grid-desc">没无边界  </p>
+                        <p class="grid-price">¥899</p>
+	      			</div>
+	      			<p class="grid-img">
+	      				<img alt="华为全景相机" src="https://res0.vmallres.com/pimages//frontLocation/content/1916647/1497543323266.jpg">
+	      			</p>
+	      		</a>
+	      	</li>
+	      	
+	      </ul>
+
+      </div>
+  		
+ 	</div>
+ </div>
 <script src="js/main.js">  </script>    
-	    
+    
 </body>	
 
 </html>

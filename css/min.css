@@ -1,6 +1,7 @@
 body{margin:  0;
 padding: 0;
 }
+a{text-decoration: none;}
 .layout{
 	margin:0 auto;
 	width:1200px;
@@ -22,7 +23,7 @@ padding: 0;
 }
 .s-sub{float:left;}
 .s-sub a{
-	text-decoration: none;
+	
 	color:#999;
 }
 .s-sub li:hover span{	
@@ -86,7 +87,6 @@ content: "|\00a0";
 .naver{
 	float: left;
 	height:40px;
-	margin-top:8px;
 	max-width:560px;
 	
 }
@@ -94,6 +94,9 @@ content: "|\00a0";
 .clearfix::after{
 	content:"";
 	display:table;
+}
+.clearfix::after{
+	clear:both;
 }
 .clearfix>li{
 	display:inline-block;
@@ -155,9 +158,9 @@ content: "|\00a0";
  }
  .wrap{
  height:450px;
- width: 1300px;
+ min-width: 1200px;
  overflow: hidden;
- position: relative;
+ position:relative
  list-style:none;
  
  }
@@ -170,7 +173,8 @@ content: "|\00a0";
  }
  .wrap ol{position:absolute;
          left:580px;
- bottom:10px;}
+        top:480px;
+ }
  .wrap ol li{
  height:10px; 
  width: 10px;
@@ -186,3 +190,129 @@ content: "|\00a0";
  .wrap ol .on{
  background:#ffffff ;
  }
+ .hr-60{
+ 	clear:both;
+ 	font-size:1px;
+ 	line-height:1px;
+ 	height:60px;
+ }
+.layout .huawei-channel-floor .h{
+	margin:0 0 16px;
+}
+.layout .home-channel-floor .h{
+	line-height:36px;
+	overflow: hidden;
+	position:relative;
+}
+.huawei-channel-floor .channel-tittle::before{
+	background:#900 none repeat scroll 0 0;
+	content:"";
+	display:block;
+	height:4px;
+	margin:0 auto;
+	width:24px;
+}
+.huawei-channel-floor .channel-tittle{
+	color:#000;
+	font-size:30px;
+	line-height:50px;
+	text-align:center;
+	font-family: arial;
+	font-weight:normal;
+}
+.grid-list{
+	display: inline-block;
+	float:left;
+}
+.layout .goods-list .grid-items{
+	display:block;
+	float: left;
+	border:1px solid #C0C0C0;
+	padding:0px ;
+	margin-left: -1px;
+	height: 280px;		
+}
+
+	
+
+.layout .goods-list  li img{
+	position:relative;
+	top: 2px;
+}
+/*.huawei-channel-floor .grid-items::before{
+	width: 0;
+	transition: width 0.2s ease-out 0s;
+	background: #900 none repeat scroll 0 0;
+	height:4px;
+}*/
+#order_nav .list .grid-items:hover {
+	background: #900 none repeat scroll 0 0;
+	 
+ 
+}
+/*.huawei-channel-floor .grid-items .on::before{
+	padding-left:2px;
+	width:100%;
+}*/
+.huawei-channel-floor .grid-list-second {
+position: relative;
+left: -13px;	
+top: -170px;	
+	
+}
+.grid-list-second  .grid-items-second{
+	display: block;
+    float:left;
+   height:190px;
+   width: 386px;
+   margin-left: 14px;
+   
+   
+}
+.huawei-channel-floor .grid-items-second .grid-info{
+	background: rgba(0,0,0,0.4) none repeat scroll 0  0;
+	bottom: auto;
+	display: block;
+	height:160px;
+	left:196px;
+	padding: 30px 10px 0 16px;
+	position: relative;
+    text-align: left;
+    top: 193px;
+    width: 164px;
+    z-index: 10;	
+   
+}
+.huawei-channel-floor .grid-items-second .grid-info:hover{
+	background: rgba(153,0,0,0.8) none repeat scroll 0  0;
+	
+}
+.huawei-channel-floor .grid-items-second .grid-info{
+	color:#fff;
+}
+.huawei-channel-floor .grid-items-second .grid-title{
+	font-size:18px;
+	line-height:20px;
+	max-height:40px;
+	padding-bottom: 2px;
+	font-weight: normal;
+}
+.huawei-channel-floor .grid-items-second .grid-desc{
+	line-height:28px;
+	font-size:12px;
+	white-space: nowrap;
+}
+.huawei-channel-floor .grid-items-second .grid-price::before{
+	background: #fff none repeat scroll 0 0;
+	content: "";
+    display: block;
+    height: 2px;
+    width: 24px;
+}
+.huawei-channel-floor .grid-items-second .grid-price{
+	color: #fffefe;
+    font-size: 14px;
+    line-height: 32px;
+    margin-top: 16px;
+    padding-top: 2px;
+}

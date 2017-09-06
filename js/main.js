@@ -40,5 +40,17 @@ window.onload=function(){
  pic[curIndex].style.display = "block";
  list[curIndex].className = "on";
  }
+// 华为精品下鼠标onmouseover变化
+//var orderNav = document.getElementById("order_nav");
+//var lis = orderNav.getElementsByTagName("li");
+//
+//for(var i =0;i<lis.length;i++){
+// lis[i].onmouseover = function(){
+//   this.className = "on grid-items";
+// };
+// lis[i].onmouseout = function(){
+//   this.className = "grid-items";
+// }
+//}
 
  };
