@@ -365,7 +365,29 @@ top: -170px;
 .huawei-channel-floor .grid-items-ad-291{
 	height: 592px;
 	width: 291px;	
-	margin-top: -300px;
+	
+}
+.huawei-channel-floor .grid-items-ad-594{
+	width: 594px;
+	position: relative;
+	top: -300px;	
+}
+.huawei-channel-floor .grid-items-ad-292{
+	position: relative;
+	top: -300px;	
+}
+.huawei-channel-floor .grid-second{
+	position: relative;
+	left: 300px;
+	top: -300px;
+	padding-left:1px ;
+}
+.huawei-channel-floor .grid-items-third .thumb{
+	display: inline-block;
+	height: 100%;
+	width: 100%;
+	text-align: center;
+	
 }
 .huawei-channel-floor .grid-items-third{
 	position: relative;
